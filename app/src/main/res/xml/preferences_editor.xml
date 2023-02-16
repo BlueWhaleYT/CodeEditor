@@ -6,17 +6,30 @@
         app:title="@string/settings_editor_title" />
 
     <PreferenceCategory
+        app:title="@string/settings_category_general"
+        app:iconSpaceReserved="false">
+
+        <com.bluewhaleyt.component.preferences.material3.Material3SwitchPreference
+            app:key="pref_editor_syntax_highlighting_enable"
+            app:icon="@drawable/ic_baseline_invert_colors_24"
+            app:title="@string/settings_editor_syntax_highlighting_enable"
+            app:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         app:title="@string/settings_editor_category_font"
         app:iconSpaceReserved="false">
 
         <EditTextPreference
             app:key="pref_editor_font_size"
-            android:icon="@drawable/ic_baseline_format_size_24"
+            app:icon="@drawable/ic_baseline_format_size_24"
             app:title="@string/settings_editor_font_size_title"
             app:useSimpleSummaryProvider="true"/>
 
         <com.bluewhaleyt.component.preferences.material3.Material3SwitchPreference
             app:key="pref_editor_font_ligatures_enable"
+            app:icon="@drawable/ic_outline_font_download_24"
             app:title="@string/settings_editor_font_ligatures_enable_title"
             app:summary="@string/settings_editor_font_ligatures_enable_summary"
             app:defaultValue="false"/>
@@ -29,13 +42,13 @@
 
         <com.bluewhaleyt.component.preferences.material3.Material3SwitchPreference
             app:key="pref_editor_pinch_zoom_enable"
-            android:icon="@drawable/ic_baseline_pinch_24"
+            app:icon="@drawable/ic_outline_pinch_24"
             app:title="@string/settings_editor_pinch_zoom_title"
             app:defaultValue="true"/>
 
         <com.bluewhaleyt.component.preferences.material3.Material3SwitchPreference
             app:key="pref_editor_word_wrap_enable"
-            android:icon="@drawable/ic_baseline_wrap_text_24"
+            app:icon="@drawable/ic_baseline_wrap_text_24"
             app:title="@string/settings_editor_word_wrap_title"
             app:defaultValue="false"/>
 

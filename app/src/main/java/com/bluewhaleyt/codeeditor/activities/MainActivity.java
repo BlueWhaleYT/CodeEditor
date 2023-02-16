@@ -33,6 +33,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
 
+import io.github.rosemoe.sora.lang.EmptyLanguage;
+import io.github.rosemoe.sora.widget.schemes.SchemeDarcula;
+
 public class MainActivity extends BaseActivity {
 
     private ActivityMainBinding binding;
@@ -93,35 +96,40 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setupSyntaxHighlighting() {
-        String themeDark = "material_palenight.json";
-        String themeLight = "material_lighter.json";
+        if (PreferencesManager.isEditorSyntaxHighlightingEnable()) {
+            String themeDark = "material_palenight.json";
+            String themeLight = "material_lighter.json";
 
-        String[] themes = {themeLight, themeDark};
+            String[] themes = {themeLight, themeDark};
 
-        try {
-            syntaxHighlight = new SyntaxHighlightUtil();
-            syntaxHighlight.setLanguageBase("languages.json");
-            syntaxHighlight.setLanguageDirectory(Constants.LANGUAGE_DIR);
-            syntaxHighlight.setThemeDirectory(Constants.THEME_DIR);
-            syntaxHighlight.setThemes(themes);
+            try {
+                syntaxHighlight = new SyntaxHighlightUtil();
+                syntaxHighlight.setLanguageBase("languages.json");
+                syntaxHighlight.setLanguageDirectory(Constants.LANGUAGE_DIR);
+                syntaxHighlight.setThemeDirectory(Constants.THEME_DIR);
+                syntaxHighlight.setThemes(themes);
 
-            var theme = CommonUtil.isInDarkMode(this) ? themeDark : themeLight;
-            syntaxHighlight.setTheme(theme);
+                var theme = CommonUtil.isInDarkMode(this) ? themeDark : themeLight;
+                syntaxHighlight.setTheme(theme);
 
-            getDefaultContent();
-            syntaxHighlight.setup(this, binding.editor, getFilePathFromUri(this, Uri.parse(file)));
-        } catch (Exception e) {
-            SnackbarUtil.makeErrorSnackbar(this, e.getMessage(), e.toString());
+                getDefaultContent();
+                syntaxHighlight.setup(this, binding.editor, getFilePathFromUri(this, Uri.parse(file)));
+            } catch (Exception e) {
+                SnackbarUtil.makeErrorSnackbar(this, e.getMessage(), e.toString());
+            }
+        } else {
+            binding.editor.setColorScheme(new SchemeDarcula());
+            binding.editor.setEditorLanguage(new EmptyLanguage());
         }
 
     }
 
     private void setupSettings() {
         binding.editor.setTextSize(Float.parseFloat(PreferencesManager.getEditorFontSize()));
-        binding.editor.setLigatureEnabled(PreferencesManager.getEditorFontLigaturesEnable());
+        binding.editor.setLigatureEnabled(PreferencesManager.isEditorFontLigaturesEnable());
 
-        binding.editor.setScalable(PreferencesManager.getEditorPinchZoomEnable());
-        binding.editor.setWordwrap(PreferencesManager.getEditorWordWrapEnable());
+        binding.editor.setScalable(PreferencesManager.isEditorPinchZoomEnable());
+        binding.editor.setWordwrap(PreferencesManager.isEditorWordWrapEnable());
     }
 
     private void getDefaultContent() {

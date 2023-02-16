@@ -10,19 +10,23 @@ import com.bluewhaleyt.filemanagement.FileUtil;
 
 public class PreferencesManager {
 
+    public static boolean isEditorSyntaxHighlightingEnable() {
+        return getPrefs().getBoolean("pref_editor_syntax_highlighting_enable", true);
+    }
+
     public static String getEditorFontSize() {
         return getPrefs().getString("pref_editor_font_size", "18");
     }
 
-    public static boolean getEditorFontLigaturesEnable() {
+    public static boolean isEditorFontLigaturesEnable() {
         return getPrefs().getBoolean("pref_editor_font_ligatures_enable", false);
     }
 
-    public static boolean getEditorPinchZoomEnable() {
+    public static boolean isEditorPinchZoomEnable() {
         return getPrefs().getBoolean("pref_editor_pinch_zoom_enable", true);
     }
 
-    public static boolean getEditorWordWrapEnable() {
+    public static boolean isEditorWordWrapEnable() {
         return getPrefs().getBoolean("pref_editor_word_wrap_enable", false);
     }
 

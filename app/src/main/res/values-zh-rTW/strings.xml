@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">試驗性編輯器</string>
+    <string name="app_name">試驗性編碼編輯器</string>
     <string name="toolbar_subtitle">此編輯器應用了 Sora Editor 資源庫.</string>
 
     <string name="settings_title">偏好設定</string>
@@ -9,6 +9,7 @@
     <string name="settings_application_editor_default_content">範本檔案</string>
 
     <string name="settings_editor_title">編輯器</string>
+    <string name="settings_editor_syntax_highlighting_enable">語法突顯</string>
     <string name="settings_editor_category_font">字體</string>
     <string name="settings_editor_font_size_title">字體大小</string>
     <string name="settings_editor_font_ligatures_enable_title">字體連字</string>
@@ -16,6 +17,7 @@
     <string name="settings_editor_pinch_zoom_title">編輯區域縮放</string>
     <string name="settings_editor_word_wrap_title">自動換行</string>
 
+    <string name="settings_category_general">一般</string>
     <string name="settings_category_other">其他</string>
 
 </resources>
