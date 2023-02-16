@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity {
     private void init() {
         try {
             getDefaultContent();
-            getSupportActionBar().setSubtitle(FileUtil.getFileNameOfPath(getFilePathFromUri(this, Uri.parse(file))));
+            getSupportActionBar().setSubtitle(getFilePathFromUri(this, Uri.parse(file)));
 
             setupEditor();
             setupSyntaxHighlighting();
@@ -118,6 +118,8 @@ public class MainActivity extends BaseActivity {
 
     private void setupSettings() {
         binding.editor.setTextSize(Float.parseFloat(PreferencesManager.getEditorFontSize()));
+        binding.editor.setLigatureEnabled(PreferencesManager.getEditorFontLigaturesEnable());
+
         binding.editor.setScalable(PreferencesManager.getEditorPinchZoomEnable());
         binding.editor.setWordwrap(PreferencesManager.getEditorWordWrapEnable());
     }

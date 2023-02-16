@@ -14,6 +14,10 @@ public class PreferencesManager {
         return getPrefs().getString("pref_editor_font_size", "18");
     }
 
+    public static boolean getEditorFontLigaturesEnable() {
+        return getPrefs().getBoolean("pref_editor_font_ligatures_enable", false);
+    }
+
     public static boolean getEditorPinchZoomEnable() {
         return getPrefs().getBoolean("pref_editor_pinch_zoom_enable", true);
     }
