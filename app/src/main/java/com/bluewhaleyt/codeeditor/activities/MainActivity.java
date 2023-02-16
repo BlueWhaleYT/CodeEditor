@@ -117,11 +117,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setupSettings() {
-
         binding.editor.setTextSize(Float.parseFloat(PreferencesManager.getEditorFontSize()));
         binding.editor.setScalable(PreferencesManager.getEditorPinchZoomEnable());
         binding.editor.setWordwrap(PreferencesManager.getEditorWordWrapEnable());
-
     }
 
     private void getDefaultContent() {
