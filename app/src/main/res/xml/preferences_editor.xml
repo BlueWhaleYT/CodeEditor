@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.bluewhaleyt.component.preferences.TitlePreference
+        app:title="@string/settings_editor_title" />
+
+    <com.bluewhaleyt.component.preferences.ButtonPreference
+        app:key="pref_editor_default_content"
+        android:icon="@drawable/ic_baseline_short_text_24"
+        app:title="@string/settings_editor_default_content"/>
+
+    <EditTextPreference
+        app:key="pref_editor_font_size"
+        android:icon="@drawable/ic_baseline_format_size_24"
+        app:title="@string/settings_editor_font_size_title"
+        app:useSimpleSummaryProvider="true"/>
+
+    <com.bluewhaleyt.component.preferences.material3.Material3SwitchPreference
+        app:key="pref_editor_pinch_zoom_enable"
+        android:icon="@drawable/ic_baseline_pinch_24"
+        app:title="@string/settings_editor_pinch_zoom_title"
+        app:defaultValue="true"/>
+
+    <com.bluewhaleyt.component.preferences.material3.Material3SwitchPreference
+        app:key="pref_editor_word_wrap_enable"
+        android:icon="@drawable/ic_baseline_wrap_text_24"
+        app:title="@string/settings_editor_word_wrap_title"
+        app:defaultValue="false"/>
+
+</PreferenceScreen>

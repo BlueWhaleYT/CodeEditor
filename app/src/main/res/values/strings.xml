@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CodeEditor</string>
+    <string name="toolbar_subtitle">The editor uses Sora Editor library.</string>
+
+    <string name="settings_title">Settings</string>
+
+    <string name="settings_application_title">Application</string>
+
+    <string name="settings_editor_title">Editor</string>
+    <string name="settings_editor_default_content">Default content</string>
+    <string name="settings_editor_font_size_title">Font Size</string>
+    <string name="settings_editor_pinch_zoom_title">Pinch Zoom</string>
+    <string name="settings_editor_word_wrap_title">Word Wrap</string>
+
+</resources>
