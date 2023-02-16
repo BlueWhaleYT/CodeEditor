@@ -5,11 +5,6 @@
     <com.bluewhaleyt.component.preferences.TitlePreference
         app:title="@string/settings_editor_title" />
 
-    <com.bluewhaleyt.component.preferences.ButtonPreference
-        app:key="pref_editor_default_content"
-        android:icon="@drawable/ic_baseline_short_text_24"
-        app:title="@string/settings_editor_default_content"/>
-
     <EditTextPreference
         app:key="pref_editor_font_size"
         android:icon="@drawable/ic_baseline_format_size_24"

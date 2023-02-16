@@ -8,9 +8,9 @@
     <string name="settings_application_title">應用程序</string>
 
     <string name="settings_editor_title">編輯器</string>
-    <string name="settings_editor_default_content">預設展示內容</string>
+    <string name="settings_editor_default_content">範本檔案</string>
     <string name="settings_editor_font_size_title">字體大小</string>
-    <string name="settings_editor_pinch_zoom_title">編輯器縮放</string>
+    <string name="settings_editor_pinch_zoom_title">編輯區域縮放</string>
     <string name="settings_editor_word_wrap_title">自動換行</string>
 
 </resources>

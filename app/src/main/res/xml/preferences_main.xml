@@ -9,13 +9,13 @@
         app:icon="@drawable/ic_baseline_android_24"
         app:title="@string/settings_application_title"
         app:layout="@layout/layout_preference_screen_item"
-        app:fragment="com.bluewhaleyt.whaleutils.fragments.preferences.application.ApplicationFragment" />
+        app:fragment="com.bluewhaleyt.codeeditor.fragments.preferences.application.ApplicationFragment" />
 
     <com.bluewhaleyt.component.preferences.ButtonPreference
         app:key="component_btn_editor"
         app:icon="@drawable/ic_baseline_code_24"
         app:title="@string/settings_editor_title"
         app:layout="@layout/layout_preference_screen_item"
-        app:fragment="com.bluewhaleyt.whaleutils.fragments.preferences.editor.EditorFragment" />
+        app:fragment="com.bluewhaleyt.codeeditor.fragments.preferences.editor.EditorFragment" />
 
 </PreferenceScreen>
