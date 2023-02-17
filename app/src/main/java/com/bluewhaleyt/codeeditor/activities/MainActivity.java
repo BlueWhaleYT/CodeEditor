@@ -34,7 +34,9 @@ import java.io.InputStreamReader;
 import java.net.URI;
 
 import io.github.rosemoe.sora.lang.EmptyLanguage;
+import io.github.rosemoe.sora.widget.component.EditorAutoCompletion;
 import io.github.rosemoe.sora.widget.schemes.SchemeDarcula;
+import io.github.rosemoe.sora.widget.schemes.SchemeNotepadXX;
 
 public class MainActivity extends BaseActivity {
 
@@ -42,7 +44,7 @@ public class MainActivity extends BaseActivity {
     private SyntaxHighlightUtil syntaxHighlight;
 
     private SharedPreferences sharedPrefs;
-    private String file;
+    private String file, editorTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,13 +78,13 @@ public class MainActivity extends BaseActivity {
 
     private void init() {
         try {
-            getDefaultContent();
+            getPref();
             getSupportActionBar().setSubtitle(getFilePathFromUri(this, Uri.parse(file)));
 
             setupEditor();
             setupSyntaxHighlighting();
             setupSettings();
-            setupDefaultContent();
+            setupPref();
 
         } catch (Exception e) {
             SnackbarUtil.makeErrorSnackbar(this, e.getMessage(), e.toString());
@@ -100,25 +102,25 @@ public class MainActivity extends BaseActivity {
             String themeDark = "material_palenight.json";
             String themeLight = "material_lighter.json";
 
-            String[] themes = {themeLight, themeDark};
-
             try {
+                getPref();
                 syntaxHighlight = new SyntaxHighlightUtil();
                 syntaxHighlight.setLanguageBase("languages.json");
                 syntaxHighlight.setLanguageDirectory(Constants.LANGUAGE_DIR);
                 syntaxHighlight.setThemeDirectory(Constants.THEME_DIR);
+
+                editorTheme = CommonUtil.isInDarkMode(this) ? themeDark : themeLight;
+                String[] themes = {themeLight, themeDark};
                 syntaxHighlight.setThemes(themes);
+                syntaxHighlight.setTheme(editorTheme);
 
-                var theme = CommonUtil.isInDarkMode(this) ? themeDark : themeLight;
-                syntaxHighlight.setTheme(theme);
-
-                getDefaultContent();
                 syntaxHighlight.setup(this, binding.editor, getFilePathFromUri(this, Uri.parse(file)));
             } catch (Exception e) {
                 SnackbarUtil.makeErrorSnackbar(this, e.getMessage(), e.toString());
             }
         } else {
-            binding.editor.setColorScheme(new SchemeDarcula());
+            var scheme = CommonUtil.isInDarkMode(this) ? new SchemeDarcula() : new SchemeNotepadXX();
+            binding.editor.setColorScheme(scheme);
             binding.editor.setEditorLanguage(new EmptyLanguage());
         }
 
@@ -130,15 +132,19 @@ public class MainActivity extends BaseActivity {
 
         binding.editor.setScalable(PreferencesManager.isEditorPinchZoomEnable());
         binding.editor.setWordwrap(PreferencesManager.isEditorWordWrapEnable());
+        binding.editor.getComponent(EditorAutoCompletion.class).setEnabled(PreferencesManager.isEditorAutoCompletionEnable());
     }
 
-    private void getDefaultContent() {
+    private void getPref() {
         sharedPrefs = getSharedPreferences("pref_editor_default_content", Context.MODE_PRIVATE);
         file = sharedPrefs.getString("pref_editor_default_content", "");
+
+        sharedPrefs = getSharedPreferences("pref_editor_theme", Context.MODE_PRIVATE);
+        editorTheme = sharedPrefs.getString("pref_editor_theme", "");
     }
 
-    private void setupDefaultContent() {
-        getDefaultContent();
+    private void setupPref() {
+        getPref();
         binding.editor.setText(FileUtil.readFile(getFilePathFromUri(this, Uri.parse(file))));
     }
 

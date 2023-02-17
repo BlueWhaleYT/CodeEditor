@@ -9,13 +9,15 @@
     <string name="settings_application_editor_default_content">範本檔案</string>
 
     <string name="settings_editor_title">編輯器</string>
-    <string name="settings_editor_syntax_highlighting_enable">語法突顯</string>
+    <string name="settings_editor_theme_title">主題</string>
+    <string name="settings_editor_syntax_highlighting_enable_title">語法突顯</string>
     <string name="settings_editor_category_font">字體</string>
     <string name="settings_editor_font_size_title">字體大小</string>
     <string name="settings_editor_font_ligatures_enable_title">字體連字</string>
     <string name="settings_editor_font_ligatures_enable_summary">僅支援連字的字體</string>
     <string name="settings_editor_pinch_zoom_title">編輯區域縮放</string>
     <string name="settings_editor_word_wrap_title">自動換行</string>
+    <string name="settings_editor_auto_completion_title">語法自動補全</string>
 
     <string name="settings_category_general">一般</string>
     <string name="settings_category_other">其他</string>

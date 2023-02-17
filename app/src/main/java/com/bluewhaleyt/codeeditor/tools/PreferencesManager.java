@@ -30,6 +30,10 @@ public class PreferencesManager {
         return getPrefs().getBoolean("pref_editor_word_wrap_enable", false);
     }
 
+    public static boolean isEditorAutoCompletionEnable() {
+        return getPrefs().getBoolean("pref_editor_auto_completion_enable", false);
+    }
+
     public static SharedPreferences getPrefs() {
         return PreferenceManager.getDefaultSharedPreferences(App.getContext());
     }

@@ -8,13 +8,15 @@
     <string name="settings_application_editor_default_content">Sample file</string>
 
     <string name="settings_editor_title">Editor</string>
-    <string name="settings_editor_syntax_highlighting_enable">Syntax Highlighting</string>
+    <string name="settings_editor_theme_title">Theme</string>
+    <string name="settings_editor_syntax_highlighting_enable_title">Syntax Highlighting</string>
     <string name="settings_editor_category_font">Font</string>
     <string name="settings_editor_font_size_title">Font Size</string>
     <string name="settings_editor_font_ligatures_enable_title">Font Ligatures</string>
     <string name="settings_editor_font_ligatures_enable_summary">Only available for supported fonts</string>
     <string name="settings_editor_pinch_zoom_title">Pinch Zoom</string>
     <string name="settings_editor_word_wrap_title">Word Wrap</string>
+    <string name="settings_editor_auto_completion_title">Auto Completion</string>
 
     <string name="settings_category_general">General</string>
     <string name="settings_category_other">Other</string>

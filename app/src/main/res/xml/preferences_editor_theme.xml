@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.bluewhaleyt.component.preferences.TitlePreference
+        app:title="@string/settings_editor_theme_title" />
+
+    <com.bluewhaleyt.component.preferences.material3.Material3ButtonPreference
+        app:icon="@drawable/ic_outline_info_24"
+        app:title="Note"
+        app:summary="Choose .tmTheme or .json file to apply themes"/>
+
+    <com.bluewhaleyt.component.preferences.ButtonPreference
+        app:key="pref_editor_theme"
+        app:icon="@drawable/ic_outline_color_lens_24"
+        app:title="@string/settings_editor_theme_title"/>
+
+</PreferenceScreen>
